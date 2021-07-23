@@ -1,5 +1,11 @@
 # @sveltejs/kit
 
+## 1.0.0-next.137
+
+### Patch Changes
+
+- bce1d76a: [chore] improved typing for runtime and tests
+
 ## 1.0.0-next.136
 
 ### Patch Changes
