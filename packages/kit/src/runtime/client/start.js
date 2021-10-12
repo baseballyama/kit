@@ -1,7 +1,7 @@
 // @ts-expect-error - value will be replaced on build step
 import Root from 'ROOT';
 // @ts-expect-error - value will be replaced on build step
-import { routes, fallback } from 'MANIFEST';
+import { routes, fallbacks } from 'MANIFEST';
 import { Router } from './router.js';
 import { Renderer } from './renderer.js';
 import { init } from './singletons.js';
@@ -34,7 +34,7 @@ export async function start({ paths, target, session, host, route, spa, trailing
 
 	const renderer = new Renderer({
 		Root,
-		fallback,
+		fallbacks,
 		target,
 		session,
 		host
