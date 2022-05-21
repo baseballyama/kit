@@ -1,3 +1,4 @@
+import { parseForESLint } from '@typescript-eslint/parser';
 import fs from 'fs';
 import * as assert from 'uvu/assert';
 import { run } from './utils.js';
@@ -33,6 +34,7 @@ run('spa', (test) => {
 
 	test('renders error page for missing page', async ({ base, page }) => {
 		await page.goto(`${base}/nosuchpage`);
+		await page.waitForFunction("(await page.textContent('h2')) === 'count: 1'");
 		assert.equal(await page.textContent('h1'), '404');
 		assert.equal(await page.textContent('h2'), 'count: 1');
 
